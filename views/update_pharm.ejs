@@ -1,0 +1,78 @@
+<!-- include header -->
+<%- include('include/_header'); -%> <!--This Syntax works ,use it always-->
+<!-- /include header -->
+
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/"><i class="fas fa-angle-double-left"></i> All Pharmacies</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Pharmacies</h2>
+            <span class="text-light">Use the below form to Update a Pharmacy</span>
+        </div>
+
+        <!-- add pharmacy form -->
+         <!-- form handling -->
+ <form method="POST" id="update_pharm">
+    <div class="new_pharm">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="<%= pharm._id %>">
+            <input type="text" name="name" value="<%= pharm.name %>" placeholder="Hartig Drug"> <!--pass the name-->
+        </div>
+        <div class="form-group">
+            <label for="Country" class="text-light">Country</label>
+            <input type="text" name="country" value="<%= pharm.country%>" placeholder="Palestine">
+        </div>
+        <div class="form-group">
+            <label for="drname" class="text-light">Dr.name</label>
+            <input type="text" name="drname" value="<%= pharm.drname%>" placeholder="Dr Rasha">
+        </div>
+        <div class="form-group">
+            <label for="Address" class="text-light">Address</label>
+            <input type="text" name="address" value="<%= pharm.address%>" placeholder="Al-Bathan">
+        </div>
+        <div class="form-group">
+            <label for="duty" class="text-light">Duty</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-4" name="duty" value="Duty" <%= pharm.duty == 'Duty' ? 'checked' : '' %> >
+                <label for="radio-4" class="radio-label">Duty</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-5" name="duty" value="Off-Duty" <%= pharm.duty == 'Off-Duty' ? 'checked' : '' %> >
+                <label for="radio-5" class="radio-label">Off-Duty</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="status" class="text-light">Status</label>
+            <div class="radio inline">
+                <input type="radio" id="radio-2" name="status" value="Active" <%= pharm.status == 'Active' ? 'checked' : '' %>>
+                <label for="radio-2" class="radio-label">Active</label>
+            </div>
+            <div class="radio inline">
+                <input type="radio" id="radio-3" name="status" value="Inactive"  <%= pharm.status == 'Inactive' ? 'checked' : '' %> >
+                <label for="radio-3" class="radio-label">Inactive</label>
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('include/_footer'); -%>
+<!-- /include footer -->
