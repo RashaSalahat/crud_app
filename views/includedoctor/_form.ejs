@@ -1,0 +1,57 @@
+<!-- form handling -->
+<!-- in the action we're going to post the url of the routes methods -->
+<!--which means when the user clicks on save btn we want to redirct him to /api/users which leads to routes methods-->
+<form action="/api/doctors" method="POST" id="add_doctor">
+    <div class="new_doctor">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="">
+            <input type="text" name="name" value="" placeholder="Dr Rand">
+        </div>
+        <div class="form-group">
+            <label for="password" class="text-light">Password</label>
+
+            <input type="text" name="password" value="" placeholder="1234">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+ <!--To be uncommented-->
+
+
+<!-- For Testing
+        
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>@Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Rasha</td>
+                        <td>rasha.sa@gmail.com</td>
+                        <td>Female</td>
+                        <td>Active</td>
+                        <td>
+                            <a href="#" class="btn border-shadow update">
+                                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+                            </a>
+                            <a class="btn border-shadow delete"  >
+                                <span class="text-gradient"><i class="fas fa-times"></i></span>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form> -->

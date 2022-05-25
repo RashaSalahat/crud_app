@@ -104,7 +104,7 @@ table{
 }
 
 .table tr:hover{
-    background-color:#8e2de2 ;
+    background-color:#8e2de2;
 }
 
 .table tr:hover td > a{
@@ -137,7 +137,7 @@ table{
 
 }
 
-/*  add pharm & update pharm template */
+/*  add clinic & update clinic template */
 .form-title{
     margin-top: 2em;
 }
@@ -146,18 +146,18 @@ table{
     padding: .5em 0;
 }
 
-.new_pharm{
+.new_clinic{
     max-width: 786px;
     margin: auto;
 }
 
-#update_pharm .form-group,
-#add_pharm .form-group{
+#update_clinic .form-group,
+#add_clinic .form-group{
     margin: .4em 0;
 }
 
-#update_pharm .form-group input[type="text"],
-#add_pharm .form-group input[type="text"]{
+#update_clinic .form-group input[type="text"],
+#add_clinic .form-group input[type="text"]{
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -167,8 +167,8 @@ table{
     border-radius: .2em;
 }
 
-#update_pharm .form-group .radio,
-#add_pharm .form-group .radio{
+#update_clinic .form-group .radio,
+#add_clinic .form-group .radio{
     margin: 1em 2em;
 }
 
@@ -212,11 +212,11 @@ table{
     background: #b4b4b4;
 }
 
-#update_pharm .form-group .btn,
-#add_pharm .form-group .btn{
+#update_clinic .form-group .btn,
+#add_clinic .form-group .btn{
     width: 100%;
     padding: .9em 1em;
-    background-color:#8e2de2; 
+    background-color: #8e2de2; 
     border: none;
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
@@ -225,8 +225,8 @@ table{
     margin: .5em 0;
 }
 
-#update_pharm .form-group .btn:hover,
-#add_pharm .form-group .btn:hover{
+#update_clinic .form-group .btn:hover,
+#add_clinic .form-group .btn:hover{
     background-color: var(--dark);
     color: var(--border);
 }

@@ -29,11 +29,9 @@ route.post('/login', (req, res)=>{
 
 // route for dashboard
 route.get('/dashboard', (req, res) => {
-  if(req.session.user){
+
       res.render('dashboard', {user : req.session.user})
-  }else{
-      res.send("Unauthorize User")
-  }
+  
 })
 
 // route for logout
@@ -96,6 +94,57 @@ route.delete('/api/pharms/:id', controller.delete);
  route.get('/api/games', controller.findgame); // this route to get single & multiple users
  route.put('/api/games/:id', controller.updategame);
  route.delete('/api/games/:id', controller.deletegame);
+
+
+
+route.get('/cl', services.homeRoutesclinic);
+
+/**
+ *  @description add users
+ *  @method GET /add-user
+ */
+route.get('/add-clinic', services.add_clinic)
+
+/**
+  *  @description for update user
+  *  @method GET /update-user
+  */
+route.get('/update-clinic', services.update_clinic)
+
+
+// API/*
+route.post('/api/clinics', controller.createclinic);
+route.get('/api/clinics', controller.findclinic); // this route to get single & multiple clinics
+route.put('/api/clinics/:id', controller.updateclinic);
+route.delete('/api/clinics/:id', controller.deleteclinic);
+
+
+//doctor
+
+
+route.get('/doc', services.homeRoutesdoctor);
+
+/**
+ *  @description add users
+ *  @method GET /add-user
+ */
+route.get('/add-doctor', services.add_doctor)
+
+/**
+  *  @description for update user
+  *  @method GET /update-user
+  */
+route.get('/update-doctor', services.update_doctor)
+
+
+// API/*
+route.post('/api/doctors', controller.createdoctor);
+route.get('/api/doctors', controller.finddoctor); // this route to get single & multiple users
+route.put('/api/doctors/:id', controller.updatedoctor);
+route.delete('/api/doctors/:id', controller.deletedoctor);
+
+
+
 
 
 module.exports = route

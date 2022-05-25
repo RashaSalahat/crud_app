@@ -146,18 +146,18 @@ table{
     padding: .5em 0;
 }
 
-.new_pharm{
+.new_doctor{
     max-width: 786px;
     margin: auto;
 }
 
-#update_pharm .form-group,
-#add_pharm .form-group{
+#update_doctor .form-group,
+#add_doctor .form-group{
     margin: .4em 0;
 }
 
-#update_pharm .form-group input[type="text"],
-#add_pharm .form-group input[type="text"]{
+#update_doctor .form-group input[type="text"],
+#add_doctor .form-group input[type="text"]{
     width: 100%;
     padding: .6em 1em;
     margin: .5em 0;
@@ -167,8 +167,8 @@ table{
     border-radius: .2em;
 }
 
-#update_pharm .form-group .radio,
-#add_pharm .form-group .radio{
+#update_doctor .form-group .radio,
+#add_doctor .form-group .radio{
     margin: 1em 2em;
 }
 
@@ -203,7 +203,7 @@ table{
 
 .radio input[type='radio']:focus + .radio-label:before{
     outline: none;
-    border-color:#8e2de2;
+    border-color: #8e2de2;
 }
 
 .radio input[type='radio']:disabled + .radio-label:before{
@@ -212,11 +212,11 @@ table{
     background: #b4b4b4;
 }
 
-#update_pharm .form-group .btn,
-#add_pharm .form-group .btn{
+#update_doctor .form-group .btn,
+#add_doctor .form-group .btn{
     width: 100%;
     padding: .9em 1em;
-    background-color:#8e2de2; 
+    background-color: #8e2de2; 
     border: none;
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
@@ -225,8 +225,8 @@ table{
     margin: .5em 0;
 }
 
-#update_pharm .form-group .btn:hover,
-#add_pharm .form-group .btn:hover{
+#update_doctor .form-group .btn:hover,
+#add_doctor .form-group .btn:hover{
     background-color: var(--dark);
     color: var(--border);
 }
