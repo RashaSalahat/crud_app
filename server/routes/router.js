@@ -5,11 +5,53 @@ const route = express.Router() // method of express :we create a different toute
 const services = require('../services/render');
 const controller = require('../controller/controller');
 
+const  credential = {
+  email : "admin@gmail.com",
+  password : "admin123"
+}
+route.get('/login', (req, res) => {
+  if(req.session.email){
+      res.render('dashboard', {user : req.session.user})
+  }else{
+      res.send("Unauthorize User")
+  }
+})
+// login user
+route.post('/login', (req, res)=>{
+  if(req.body.email == credential.email && req.body.password == credential.password){
+      req.session.user = req.body.email;
+      res.redirect('/dashboard');
+      //res.end("Login Successful...!");
+  }else{
+      res.end("Invalid Username")
+  }
+});
+
+// route for dashboard
+route.get('/dashboard', (req, res) => {
+  if(req.session.user){
+      res.render('dashboard', {user : req.session.user})
+  }else{
+      res.send("Unauthorize User")
+  }
+})
+
+// route for logout
+route.get('/logout', (req ,res)=>{
+  req.session.destroy(function(err){
+      if(err){
+          res.render('login', {user : req.session.user})
+      }else{
+          res.render('base', { title: "Express", logout : "logout Successfully...!"})
+      }
+  })
+})
+
 /**
  *  @description Root Route
  *  @method GET /
  */
-route.get('/', services.homeRoutes);
+route.get('/ph', services.homeRoutes);
 
 /**
  *  @description add users
