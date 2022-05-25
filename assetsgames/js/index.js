@@ -1,11 +1,12 @@
+
 //to alert mssgs
-$("#add_pharm").submit(function(event){
+$("#add_game").submit(function(event){
     alert("Data Inserted Successfully!");
 })
-// in the update pharm we don't have action method bc we don't want to redirect the user anywhere else
+// in the update user we don't have action method bc we don't want to redirect the user anywhere else
 //when i click on submit : we want to execute the following function
 //<form method="POST" id="update_user"> in the form field we have the id shown:
-$("#update_pharm").submit(function(event){
+$("#update_game").submit(function(event){
     //change the default behavior of the form that is to reload the browser when clicked on submit btn
     event.preventDefault();
 // return a serializeArray() of the data that is all the submitted data
@@ -19,7 +20,7 @@ $("#update_pharm").submit(function(event){
 //pass the value to the ajax :ajax to make a req to server & get a response from them
 
     var request = {
-        "url" : `http://localhost:3000/api/pharms/${data.id}`,
+        "url" : `http://localhost:3000/api/games/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -30,14 +31,14 @@ $("#update_pharm").submit(function(event){
 
 })
 //in the delete form we don't have any href attribute , we are not gonna to navigate the user anywhere else
-if(window.location.pathname == "/ph"){
+if(window.location.pathname == "/ga"){
     $ondelete = $(".table tbody td a.delete");// table body table data // a is anchor &we have a delete route for it
     // a : btn border-shadow delete this => a.delete
     $ondelete.click(function(){
         var id = $(this).attr("data-id") //get the current user id from this data attr :data-id=<%= users[i]._id%>
 
         var request = {
-            "url" : `http://localhost:3000/api/pharms/${id}`,
+            "url" : `http://localhost:3000/api/games/${id}`,
             "method" : "DELETE"
         }
 

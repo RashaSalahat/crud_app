@@ -1,0 +1,54 @@
+<!-- include header -->
+<%- include('includegame/_header'); -%> <!--This Syntax works ,use it always-->
+<!-- /include header -->
+
+
+  <!-- Main Site -->
+  <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+           <div class="filter">
+               <a href="/ga"><i class="fas fa-angle-double-left"></i> All Games</a>
+           </div>
+        </div>
+        <div class="form-title text-center">
+            <h2 class="text-dark">Update Game</h2>
+            <span class="text-light">Use the below form to Update an account</span>
+        </div>
+
+        <!-- add game form -->
+         <!-- form handling -->
+ <form method="POST" id="update_game">
+    <div class="new_game">
+        <div class="form-group">
+            <label for="name" class="text-light">Name</label>
+            <input type="hidden" name="id" value="<%= game._id %>">
+            <input type="text" name="name" value="<%= game.name %>" placeholder="Toy Soldier"> <!--pass the name-->
+        </div>
+        <div class="form-group">
+            <label for="Describtion" class="text-light">Describtion</label>
+            <input type="text" name="describtion" value="<%= game.describtion%>" placeholder="This toy is for 3 years old">
+        </div>
+        <div class="form-group">
+            <label for="Type" class="text-light">Type</label>
+            <input type="text" name="type" value="<%= game.type%>" placeholder="Social">
+        </div>
+        <div class="form-group">
+            <label for="Stores" class="text-light">Stores</label>
+            <input type="text" name="stores" value="<%= game.stores%>" placeholder="Toys R US">
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn text-dark update">Save</button>
+        </div>
+
+    </div>
+</form>
+       
+    </div>
+</main>
+<!-- /Main Site -->
+
+<!-- include footer -->
+<%- include('includegame/_footer'); -%>
+<!-- /include footer -->

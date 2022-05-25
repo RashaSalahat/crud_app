@@ -1,0 +1,19 @@
+<% for(var i = 0; i < games.length; i++) { %>
+    <tr>
+        <!--print Variables-->
+        <td><%= i + 1 %></td>
+        <td><%= games[i].name %></td>
+        <td><%= games[i].describtion %></td>
+        <td><%= games[i].type %></td>
+        <td><%= games[i].stores %></td>
+        <td>
+            <!--  ?id=<%= games[i]._id%> : we pass the id to it  -->
+            <a href="/update-game?id=<%= games[i]._id%>" class="btn border-shadow update">
+                <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+            </a>
+            <a class="btn border-shadow delete" data-id=<%= games[i]._id%> >
+                <span class="text-gradient"><i class="fas fa-times"></i></span>
+            </a>
+        </td>
+    </tr>
+    <% } %>

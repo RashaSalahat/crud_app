@@ -72,5 +72,30 @@ route.get('/api/pharms', controller.find); // this route to get single & multipl
 route.put('/api/pharms/:id', controller.update);
 route.delete('/api/pharms/:id', controller.delete);
 
+/**
+ *  @description Root Route
+ *  @method GET /
+ */
+ route.get('/ga', services.homeRoutesgame);
+
+ /**
+  *  @description add users
+  *  @method GET /add-user
+  */
+ route.get('/add-game', services.add_game)
+ 
+ /**
+   *  @description for update user
+   *  @method GET /update-user
+   */
+ route.get('/update-game', services.update_game)
+ 
+ 
+ // API/*
+ route.post('/api/games', controller.creategame);
+ route.get('/api/games', controller.findgame); // this route to get single & multiple users
+ route.put('/api/games/:id', controller.updategame);
+ route.delete('/api/games/:id', controller.deletegame);
+
 
 module.exports = route

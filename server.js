@@ -44,6 +44,13 @@ app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js"))) // he said you only need to specify the name of the file and the folder it exists in
 // eg: we have a style.css inside : css     the path is css/style.css
 // load routers
+
+
+// load assets
+app.use('/cssgame', express.static(path.resolve(__dirname, "assetsgames/css")))
+app.use('/img', express.static(path.resolve(__dirname, "assetsgames/img")))
+app.use('/jsgame', express.static(path.resolve(__dirname, "assetsgames/js"))) // he said you only need to specify the name of the file and the folder it exists in
+// eg: we have a style.css inside : css     the path is css/style.css
 app.use('/', require('./server/routes/router'))
 app.get('/', (req, res) =>{
     res.render('base', { title : "Login System"});
